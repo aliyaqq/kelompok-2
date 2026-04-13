@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'Payment_Processing.dart';
+import 'payment_sucssesfull.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -74,16 +75,63 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
+   return Scaffold(
+  appBar: AppBar(
+    backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+    title: Text(widget.title),
+  ),
+  drawer: Drawer(
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: [
+        DrawerHeader(
+          decoration: BoxDecoration(
+            color: Colors.deepPurple,
+          ),
+          child: Text(
+            'Menu',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+            ),
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.home),
+          title: Text('Home'),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.payment),
+          title: Text('Payment Processing'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PaymentProcessingScreen(),
+              ),
+            );
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.check_circle),
+          title: Text('Payment Success'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PaymentSuccessfulScreen(),
+              ),
+            );
+          },
+        ),
+      ],
+    ),
+  ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
