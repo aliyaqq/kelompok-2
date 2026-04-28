@@ -63,7 +63,7 @@ class MyHomePage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Hilow!",
+                    "Pengguna!",
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   Text(
