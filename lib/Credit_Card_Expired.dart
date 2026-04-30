@@ -39,7 +39,7 @@ class CardExpiredScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: const BoxDecoration(
-                        color: Colors.red,
+                        color: Color.fromARGB(255, 26, 166, 241),
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(
